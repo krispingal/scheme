@@ -1,0 +1,10 @@
+;This script replicates the elements of a list a given no.of times
+(define (replica lis n)
+  (cond ((null? lis) lis)
+	((null? (cdr lis)) (replicate (car lis) n))
+	(else (append (replicate (car lis) n) (replica (cdr lis) n)))
+	)
+  )
+(define (replicate i n)
+  (if (= n 0) '() (cons i (replicate i (- n 1))))
+  )

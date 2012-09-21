@@ -1,0 +1,7 @@
+(define (exposed lis)
+  (leastel (cdr lis) (car lis)))
+(define (leastel lis min)
+  (cond ((null? lis) min)
+	((< (car lis) min) (leastel (cdr lis) (car lis)))
+	(else (leastel (cdr lis) min)))
+)

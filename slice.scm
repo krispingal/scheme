@@ -1,0 +1,12 @@
+;This script extracts a slice from list
+(define (slice lis u l)
+  (foo lis (+ (- (length lis) u) 1) (+ (- (length lis) l) 1))
+  )
+(define (foo lis u l)
+  (cond ((null? lis) lis) 
+	((null? (cdr lis)) (if (= l 1) lis '()))
+	((> (length lis) u) (append '() (foo (cdr lis) u l)))
+	((>= (length lis) l) (cons (car lis) (foo (cdr lis) u l)))
+	(else (append '() (foo (cdr lis) u l)))
+	)
+  )

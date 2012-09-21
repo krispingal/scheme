@@ -1,0 +1,8 @@
+(define (remelem l)
+  (cond ((null? l) ())
+	(if (f(car l)) (cons (car l) (remelem l)) (remelem l))
+   )
+)
+(define (f x)
+  (if (odd? x) #t #f)
+)

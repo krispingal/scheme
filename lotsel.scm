@@ -1,0 +1,20 @@
+;This script draws n different random numbers from set 1...m
+(define (lotsel n l)
+  (fubar ((foo l '()) n))
+  )
+(define (foo l ls)
+  (if (= l 0)
+      ls
+      (foo (- l 1) (cons l ls))
+      )
+  )
+(define (fubar ls n)
+  (if (= n 0) ls (fubar (rnddel ls (random (length ls)))))
+  )
+(define (rnddel ls n)
+  (if (= n 1)
+      (cdr ls)
+      (cons (car ls) (rnddel (cdr ls) (- n 1)))
+      )
+  )
+
